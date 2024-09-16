@@ -1,0 +1,795 @@
+Q1. Define an overloaded function add that adds two integers, two floats, and concatenates two strings. Write a program to demonstrate the
+    working of all overloaded functions.: Use different parameter types for overloading. 
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int add(int a, int b)
+{
+    return a + b;
+}
+
+float add(float a, float b)
+{
+    return a + b;
+}
+
+string add(string a, string b)
+{
+    return a + " " + b;
+}
+
+int main()
+{
+    int result1 = add(1, 2);
+    float result2 = add(1.5f, 2.5f);
+    string result3 = add("Mona", "Lisa");
+
+    cout << "The Addition of Integer is " << result1 << "\n";
+    cout << "The Addition of Float is " << result2 << "\n";
+    cout << "The Addition of String is " << result3 << "\n";
+    return 0;
+}
+
+Q2. Create a function calculateArea that is overloaded to compute the area of a circle, rectangle, and triangle. Use appropriate arguments
+    to represent each shape’s dimensions.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+double calculateArea(double r)
+{
+    double area = 2 * 3.14159 * r * r;
+    return area;
+}
+
+float calculateArea(float a, float b)
+{
+    return a * b;
+}
+
+double calculateArea(double a, double b)
+{
+    double area = (a * b) / 2.0;
+    return area;
+}
+
+int main()
+{
+    double areaOfCircle = calculateArea(2.98);
+    float areaOfRect = calculateArea(1.5f, 2.5f);
+    double areaOfTriangle = calculateArea(5.6, 6.5);
+
+    cout << "The Area Circle is " << areaOfCircle << "\n";
+    cout << "The Area Rectangle is " << areaOfRect << "\n";
+    cout << "The Area Triangle is " << areaOfTriangle << "\n";
+    return 0;
+}
+
+Q3. Overload a max function to return the maximum of two integers, two floats, and two strings (lexicographically). Demonstrate its usage
+    in a program.
+    
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int max(int a, int b)
+{
+    if (a > b)
+    {
+        return a;
+    }
+    return b;
+}
+
+float max(float a, float b)
+{
+    if (a > b)
+    {
+        return a;
+    }
+    return b;
+}
+
+string max(string a, string b)
+{
+    if (a < b)
+    {
+        return a;
+    }
+    return b;
+}
+
+int main()
+{
+    int max_of_Two_Int = max(5, 6);
+    float max_of_Two_Float = max(5.5f, 6.5f);
+    string max_of_Two_string = max("floor", "cladding");
+
+    cout << "The Max Value of Integer is " << max_of_Two_Int << endl;
+    cout << "The Max Value of Float is " << max_of_Two_Float << endl;
+    cout << "The Max Value of String is " << max_of_Two_string << endl;
+
+    return 0;
+}
+
+Q4. Implement an overloaded function print that prints an integer, a float, and a string. Write a program to test it with different data
+    types.
+    
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int print(int a)
+{
+    return a;
+}
+
+float print(float a)
+{
+    return a;
+}
+
+string print(string a)
+{
+    return a;
+}
+
+int main()
+{
+    cout << "Print Int " << print(5) << "\n";
+    cout << "Print Float " << print(2.5f) << "\n";
+    cout << "Print String " << print("Naina") << "\n";
+    return 0;
+}
+
+Q5. Create an overloaded function multiply that multiplies two integers, two floats, and an integer with a float. Write a test program
+    to verify the result of all overloaded functions.    
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int multiply(int a, int b)
+{
+    return a * b;
+}
+
+float multiply(float a, float b)
+{
+    return a * b;
+}
+
+float multiply(float a, int b)
+{
+    return a * b;
+}
+
+int main()
+{
+    if ((5 * 6) == multiply(5, 6))
+    {
+        cout << "Test Case Pass" << endl;
+    }
+    else
+    {
+        cout << "Test Case Not Passing" << endl;
+    }
+
+    if ((5.5 * 6.5) == multiply(5.5f, 6.5f))
+    {
+        cout << "Test Case Pass" << endl;
+    }
+    else
+    {
+        cout << "Test Case Not Passing" << endl;
+    }
+
+    if ((5.5 * 2) == multiply(5.5f, 2))
+    {
+        cout << "Test Case Pass" << endl;
+    }
+    else
+    {
+        cout << "Test Case Not Passing" << endl;
+    }
+    return 0;
+}
+
+Q6. Overload a function swapValues to swap two integers, two floats, and two characters. Write a program that demonstrates swapping
+    of these data types.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+void swapValues(int a, int b)
+{
+    cout << "Before Swap value of A is " << a << " and B is " << b << endl;
+    int c = a;
+    a = b;
+    b = c;
+    cout << "After Swap value of A is " << a << " and B is " << b << endl;
+}
+
+void swapValues(float a, float b)
+{
+    cout << "Before Swap value of A is " << a << " and B is " << b << endl;
+    float c = a;
+    a = b;
+    b = c;
+    cout << "After Swap value of A is " << a << " and B is " << b << endl;
+}
+
+void swapValues(char a, char b)
+{
+    cout << "Before Swap value of A is " << a << " and B is " << b << endl;
+    char c = a;
+    a = b;
+    b = c;
+    cout << "After Swap value of A is " << a << " and B is " << b << endl;
+}
+
+int main()
+{
+    swapValues(5, 6);
+    cout << "\n";
+    swapValues(5.5f, 6.6f);
+    cout << "\n";
+    swapValues('a', 'z');
+
+    return 0;
+}
+
+Q7. Define a function compare that is overloaded to compare two integers, two floats, and two characters, returning the greater value in 
+    each case. Test the overloaded functions with appropriate examples.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int compare(int a, int b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
+float compare(float a, float b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
+char compare(char a, char b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
+int main()
+{
+    cout << "The Greatest Integer in betwwen is " << compare(1, 0) << endl;
+    cout << "The Greatest Float in betwwen is " << compare(0.5f, 0.9f) << endl;
+    cout << "The Greatest Char in betwwen is " << compare('j', 'g') << endl;
+    return 0;
+}
+
+Q8.Write a program that demonstrates function overloading by creating overloaded functions for subtract that subtract two integers, two
+   floats, and two long integers.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int subtract(int a, int b)
+{
+    return a - b;
+}
+
+float subtract(float a, float b)
+{
+    return a - b;
+}
+
+long subtract(long a, long b)
+{
+    return a - b;
+}
+
+int main()
+{
+    int subtract_of_int = subtract(15, 9);
+    float subtract_of_float = subtract(1.5f, 0.8f);
+    long subtract_of_long = subtract(154454845l, 484878898l);
+
+    cout << "Subtraction of Integers is " << subtract_of_int << endl;
+    cout << "Subtraction of Float is " << subtract_of_float << endl;
+    cout << "Subtraction of Long is " << subtract_of_long << endl;
+
+    return 0;
+}
+
+Q9. Create an overloaded findAverage function that calculates the average of two integers, three integers, and four integers. Write a
+    program to test the overloaded functions.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+void getAverage(int a, int b)
+{
+    cout << (a + b) / 2 << endl;
+}
+
+void getAverage(int a, int b, int c)
+{
+    cout << (a + b + c) / 3 << endl;
+}
+
+void getAverage(int a, int b, int c, int d)
+{
+    cout << (a + b + c + d) / 4 << endl;
+}
+
+int main()
+{
+    getAverage(5, 10);
+    getAverage(5, 10, 15);
+    getAverage(5, 10, 15, 22);
+
+    return 0;
+}
+
+Q10. Overload the power function to compute the power of an integer raised to another integer, a float raised to an integer, and an integer
+     raised to a float.    
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int getPowerResult(int a, int b)
+{
+    return pow(a, b);
+}
+
+float getPowerResult(float a, int b)
+{
+    return pow(a, b);
+}
+
+float getPowerResult(int a, float b)
+{
+    return pow(a, b);
+}
+
+int main()
+{
+    int intaPowerb = getPowerResult(2, 3);
+    float floataPowerb = getPowerResult(2.5f, 3);
+    float int_a_Raise_b = getPowerResult(5, 2.5f);
+
+    cout << "The Int a power int b is: " << intaPowerb << endl;
+    cout << "The Float a power Float b is: " << floataPowerb << endl;
+    cout << "The int a power Float b is: " << int_a_Raise_b << endl;
+    return 0;
+}
+
+Q11. Write a program to overload the reverse function, which reverses an integer, a float, and a string. Demonstrate how function overloading
+     works with each data type.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int getReverse(int n)
+{
+    if (n == 0 && n <= 9)
+    {
+        return n;
+    }
+    int sum = 0;
+    for (int i = n; i > 0; i /= 10)
+    {
+        int last_digit = i % 10;
+        sum = sum * 10 + last_digit;
+    }
+    return sum;
+}
+
+string getReverse(string s)
+{
+    string str = "";
+    for (int i = s.length(); i >= 0; i--)
+    {
+        str += s[i];
+    }
+    return str;
+}
+
+int main()
+{
+    int reverseIntNums = getReverse(123);
+    string reverseStr = getReverse("Hellow");
+
+    cout << "Reverse of Integer is " << reverseIntNums << endl;
+    cout << "Reverse of String is " << reverseStr << endl;
+    return 0;
+}
+
+Q12. Overload the absolute function to return the absolute value of an integer, a float, and a double. Write a program to test all the
+     overloaded versions.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int getAbsoluteValue(int a)
+{
+    if (a >= 0)
+    {
+        return a;
+    }
+    else
+    {
+        return -a;
+    }
+}
+
+float getAbsoluteValue(float a)
+{
+    if (a >= 0)
+    {
+        return a;
+    }
+    else
+    {
+        return -a;
+    }
+}
+
+double getAbsoluteValue(double a)
+{
+    if (a >= 0)
+    {
+        return a;
+    }
+    else
+    {
+        return -a;
+    }
+}
+
+int main()
+{
+    int absoluteIntValue = getAbsoluteValue(-56);
+    float absoluteFloatValue = getAbsoluteValue(-5.6f);
+    double absoluteDoubleValue = getAbsoluteValue(-8.9);
+
+    cout << "The absolute value of integer is " << absoluteIntValue << endl;
+    cout << "The absolute value of Float is " << absoluteFloatValue << endl;
+    cout << "The absolute value of Double is " << absoluteDoubleValue << endl;
+
+    return 0;
+}
+
+Q13. Implement overloaded functions isEqual to check if two integers are equal, two characters are equal, and two floating-point numbers are
+     equal (with precision tolerance).
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+bool isEqual(int a, int b)
+{
+    return a == b;
+}
+
+bool isEqual(char x, char y)
+{
+    return x == y;
+}
+
+bool isEqual(float x, float y)
+{
+    return x == y;
+}
+
+int main()
+{
+    if (isEqual(5, 5))
+    {
+        cout << "Number are Equal." << endl;
+    }
+    else
+    {
+        cout << "Number are not Equal." << endl;
+    }
+
+    if (isEqual('a', 'a'))
+    {
+        cout << "Charecter are Equal." << endl;
+    }
+    else
+    {
+        cout << "Charecter are not Equal." << endl;
+    }
+
+    if (isEqual(2.5f, 2.5f))
+    {
+        cout << "Float Number are Equal." << endl;
+    }
+    else
+    {
+        cout << "Float Number are not Equal." << endl;
+    }
+
+    return 0;
+}
+
+Q14. Write a program that uses function overloading for a discount function that calculates the discount for different types of products
+     based on integer, float, and string inputs representing product price and category.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+float get_Discount(int price)
+{
+    if (price > 200 && price < 300)
+    {
+        return price * 5 / 100.00;
+    }
+    else if (price >= 300)
+    {
+        return price * 10 / 100.00;
+    }
+    else
+    {
+        return price * 3 / 100.00;
+    }
+}
+
+float get_Discount(float price)
+{
+    if (price > 200 && price < 300)
+    {
+        return price * 5 / 100.00;
+    }
+    else if (price >= 300)
+    {
+        return price * 10 / 100.00;
+    }
+    else
+    {
+        return price * 3 / 100.00;
+    }
+}
+
+string get_Discount(string category)
+{
+    if (category == "cloth")
+    {
+        return "20% Discount";
+    }
+    else if (category == "grocery")
+    {
+        return "10% Discount";
+    }
+    else
+    {
+        return "5% Discount";
+    }
+}
+
+int main()
+{
+    float int_discount = get_Discount(489);
+    float float_discount = get_Discount(450.56f);
+    string string_discount = get_Discount("cloth");
+    cout << "The Discount Price of Int Price of Product is : " << int_discount << endl;
+    cout << "The Discount Price of Float Price of Product is : " << float_discount << endl;
+    cout << "The Discount Price of String Price of Product is : " << string_discount << endl;
+    ;
+    return 0;
+}
+
+Q15. Overload a function toUpper to convert a lowercase character to uppercase and a lowercase string to uppercase. Write a program to test
+     both cases.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+string toUpper(string str)
+{
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (int(str[i]) >= 97 && int(str[i] <= 122))
+        {
+            str[i] = int(str[i]) - 32;
+        }
+    }
+    return str;
+}
+
+char toUpper(char any)
+{
+    if (int(any) >= 97 && int(any) <= 122)
+    {
+        int upperCaseValue = int(any) - 32;
+        return char(upperCaseValue);
+    }
+    return any;
+}
+
+int main()
+{
+    char convert_to_char_uppercase = toUpper('s');
+    string convert_to_uppercase = toUpper("string");
+    cout << "Uppercase version of char is " << convert_to_char_uppercase << endl;
+    cout << "Uppercase version of string is " << convert_to_uppercase;
+    return 0;
+}
+
+Q16. Define an overloaded function minValue that returns the minimum of two integers, two floats, and two double values. Test the program
+     with different inputs.  
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int minValue(int a, int b)
+{
+    if (a > b)
+    {
+        return b;
+    }
+    return a;
+}
+
+float minValue(float a, float b)
+{
+    if (a > b)
+    {
+        return b;
+    }
+    return a;
+}
+
+double minValue(double a, double b)
+{
+    if (a > b)
+    {
+        return b;
+    }
+    return a;
+}
+
+int main()
+{
+    int min_Value_two_int = minValue(5, 8);
+    float min_Value_two_float = minValue(5.5f, 8.5f);
+    double min_Value_two_double = minValue(5.556, 8.545);
+
+    cout << "The Minimum value of two integer is : " << min_Value_two_int << endl;
+    cout << "The Minimum value of two Float is : " << min_Value_two_float << endl;
+    cout << "The Minimum value of two Double is : " << min_Value_two_double << endl;
+    return 0;
+}
+
+Q17. Write a program to overload the printSquare function that prints the square of an integer, a float, and a double value.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int printSquare(int n)
+{
+    return n * n;
+}
+
+float printSquare(float n)
+{
+    return n * n;
+}
+
+double printSquare(double n)
+{
+    return n * n;
+}
+
+int main()
+{
+    cout << "The Square of the Integer is " << printSquare(5) << endl;
+    cout << "The Square of the Float is " << printSquare(5.5f) << endl;
+    cout << "The Square of the Double is " << printSquare(6.567) << endl;
+    return 0;
+}
+
+Q18. Create an overloaded function concat to concatenate two strings, concatenate two integers, and concatenate an integer with a string.
+     Write a test program for it.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+string getConcat(string s, string t)
+{
+    return s + t;
+}
+
+int getConcat(int a, int b)
+{
+    int temp = b;
+
+    int digit = 0;
+
+    while (temp > 0)
+    {
+        digit++;
+        temp /= 10;
+    }
+
+    int result = a * pow(10, digit) + b;
+
+    return result;
+}
+
+string getConcat(int a, string b)
+{
+    return to_string(a) + b;
+}
+
+int main()
+{
+    string concate_str = getConcat("str", "ing");
+    int concate_int = getConcat(5, 7);
+    string concate_int_str = getConcat(7, "Dhoni");
+    cout << concate_str << "\n";
+    cout << concate_int << "\n";
+    cout << concate_int_str << "\n";
+    return 0;
+}
+
+Q19. Overload the calculate function that computes the sum of an integer array, a float array, and a double array using different argument types and sizes.
+
+Ans.#include <bits/stdc++.h>
+using namespace std;
+
+int computeSum(int a[], int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += a[i];
+    }
+    return sum;
+}
+
+float computeSum(float a[], int n)
+{
+    float sum = 0.0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += a[i];
+    }
+    return sum;
+}
+
+double computeSum(double a[], int n)
+{
+    double sum = 0.0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += a[i];
+    }
+    return sum;
+}
+
+int main()
+{
+    int arr[] = {1, 2, 3, 4};
+    int sizeOfArray = sizeof(arr) / sizeof(arr[0]);
+
+    float arr_float[] = {1.5, 2.5, 3.5};
+    int sizeOfFloatArray = sizeof(arr_float) / sizeof(arr_float[0]);
+
+    double arr_double[] = {1.556, 2.548, 3.579};
+    int sizeOfDoubleArray = sizeof(arr_double) / sizeof(arr_double[0]);
+
+    cout << "Sum of Int Array is " << computeSum(arr, sizeOfArray) << endl;
+    cout << "Sum of Float Array is " << computeSum(arr_float, sizeOfFloatArray) << endl;
+    cout << "Sum of Double Array is " << computeSum(arr_double, sizeOfDoubleArray);
+    return 0;
+}
+
+Q20.
+
+Ans.

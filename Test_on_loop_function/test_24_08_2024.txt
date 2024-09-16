@@ -1,0 +1,375 @@
+Q1.Write a C++ function that takes the coordinates of a point (x, y) as input and uses nested if-else statements to determine in which
+   quadrant the point lies.
+    
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+string checkForQuadrant(int x, int y)
+{
+    string result;
+    if (x > 0 && y > 0)
+    {
+        result = "First Quadrant";
+    }
+    else if (x < 0 && y > 0)
+    {
+        result = "Second Quadrant";
+    }
+    else if (x < 0 && y < 0)
+    {
+        result = "Third Quadrant";
+    }
+    else if (x > 0 && y < 0)
+    {
+        result = "Forth Quadrant";
+    }
+
+    return result;
+}
+ 
+Q2. Write a C++ function that takes an integer as input and uses nested if-else statements to determine if the number is a perfect cube or not.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+bool checkNumPerfectCube(int n)
+{
+    int cube = round(cbrt(n));
+    return cube * cube * cube == n;
+}
+
+int main()
+{
+    int num;
+    cout << "Enter the Number: ";
+    cin >> num;
+
+    bool isPerfectCube = checkNumPerfectCube(num);
+
+    if (isPerfectCube)
+    {
+        cout << num << " is a perfect Cube";
+    }
+    else
+    {
+        cout << num << " is not a perfect Cube";
+    }
+    return 0;
+}
+
+Q3. Write a C++ function that takes an integer as input and uses nested if-else statements to determine if the number is a power of 2 or not.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+bool checkPowerOf2(int n)
+{
+    int count = 1;
+    while (n % 2 == 0 && n >= 1)
+    {
+        n /= 2;
+    }
+    if (count == n)
+    {
+        return true;
+    }
+    else
+        return false;
+}
+
+int main()
+{
+    int num;
+    cout << "Enter the Number: ";
+    cin >> num;
+
+    bool isPowerOf2 = checkPowerOf2(num);
+
+    if (isPowerOf2)
+    {
+        cout << num << " is a Power of 2";
+    }
+    else
+    {
+        cout << num << " is not Power of 2";
+    }
+    return 0;
+}
+
+Q4. Write a C++ function that takes a character as input and uses nested if-else statements to determine if it is a digit, uppercase letter,
+    lowercase letter, or a special character.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+string checkCharCategory(char ch)
+{
+    int asciiValue = int(ch);
+
+    if (asciiValue >= 65 && asciiValue <= 90)
+    {
+        return "Uppercase Letter";
+    }
+    else if (asciiValue >= 97 && asciiValue <= 122)
+    {
+        return "Lowercase Letter";
+    }
+    else if (asciiValue >= 48 && asciiValue <= 57)
+    {
+        return "Digit";
+    }
+    else
+    {
+        return "Special Charecter";
+    }
+}
+
+int main()
+{
+    char anyCh;
+    cout << "Enter any Charecter: ";
+    cin >> anyCh;
+
+    string category_Of_Char = checkCharCategory(anyCh);
+
+    cout << "The " << anyCh << " is a " << category_Of_Char;
+    return 0;
+}
+
+int main()
+{
+    int x, y;
+    cout << "Enter the Coordinate X: ";
+    cin >> x;
+    cout << "Enter the Coordinate Y: ";
+    cin >> y;
+
+    string quadrant = checkForQuadrant(x, y);
+
+    cout << "The Point lies in " << quadrant;
+    return 0;
+}
+
+Q5.     A
+        AB
+        ABC
+        ABCD
+        ABCDE
+
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+void printAlfabedPattern(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        int ch = 65;
+        for (int j = 1; j <= i; j++)
+        {
+            cout << char(ch) << " ";
+            ch++;
+        }
+        cout << "\n";
+    }
+}
+
+int main()
+{
+    int row;
+    cout << "Enter the Number of Row: ";
+    cin >> row;
+
+    printAlfabedPattern(row);
+    return 0;
+}
+
+Q6.  
+         A
+        ABA
+       ABCBA
+      ABCDCBA
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+void printAlfabedPattern(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        int ch = 65;
+        // Code to print spaces
+        for (int j = n - i; j >= 1; j--)
+        {
+            cout << " ";
+        }
+        // Code to print Alfabeds
+        for (int j = 1; j <= i; j++)
+        {
+            cout << char(ch);
+            ch++;
+        }
+        ch = 65;
+        for (int j = i - 1; j > 0; j--)
+        {
+            cout << char(ch + j - 1);
+        }
+        cout << "\n";
+    }
+}
+
+int main()
+{
+   
+    int row;
+    cout << "Enter the Number of Row: ";
+    cin >> row;
+
+    printAlfabedPattern(row);
+    return 0;
+}
+
+Q7.
+    
+     *
+     * * *
+     * * * * *
+     * * * * * * *
+     * * * * * * * * *
+     
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+void printPattern(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        // Code to print spaces
+        for (int j = n - i; j >= 1; j--)
+        {
+            cout << " ";
+        }
+        // Code to print Star
+        for (int j = 1; j <= 2 * i - 1; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    int row;
+    cout << "Enter the Number of Row: ";
+    cin >> row;
+
+    printPattern(row);
+    return 0;
+}
+
+Q8. Implement a C++ function that takes a day of the month as an argument and returns the corresponding zodiac sign using if-else statements.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+string getZodiacSign(int day, int month)
+{
+    if (month == 3 && day >= 21 || month == 4 && day <= 19)
+        return "Aries";
+    if (month == 4 && day >= 20 || month == 5 && day <= 20)
+        return "Taurus";
+    if (month == 5 && day >= 21 || month == 6 && day <= 20)
+        return "Gemini";
+    if (month == 6 && day >= 21 || month == 7 && day <= 22)
+        return "Cancer";
+    if (month == 7 && day >= 23 || month == 8 && day <= 22)
+        return "Leo";
+    if (month == 8 && day >= 23 || month == 9 && day <= 22)
+        return "Virgo";
+    if (month == 9 && day >= 23 || month == 10 && day <= 22)
+        return "Libra";
+    if (month == 10 && day >= 23 || month == 11 && day <= 21)
+        return "Scorpio";
+    if (month == 11 && day >= 22 || month == 12 && day <= 21)
+        return "Sagittarius";
+    if (month == 12 && day >= 22 || month == 1 && day <= 19)
+        return "Capricorn";
+    if (month == 1 && day >= 20 || month == 2 && day <= 18)
+        return "Aquarius";
+    if (month == 2 && day >= 19 || month == 3 && day <= 20)
+        return "Pisces";
+}
+
+int main()
+{
+    int day, month;
+    cout << "Enter the Day of Month: ";
+    cin >> day;
+    cout << "Enter the Month: ";
+    cin >> month;
+
+    string zodiac_Sign = getZodiacSign(day, month);
+
+    cout << "Your Zodiac Sign is " << zodiac_Sign;
+    return 0;
+}
+
+Q9. Write a C++ function that takes a temperature in Fahrenheit as an argument and returns its equivalent in Celsius, with additional
+    messages if it is freezing or boiling using if-else statements.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+float converTempToCelsius(float t)
+{
+    float celsius = (t - 32) * (5 / 9.0);
+    return celsius;
+}
+
+int main()
+{
+    float temp;
+    cout << "Enter the Temperature in fahrenheit : ";
+    cin >> temp;
+
+    float celsius = converTempToCelsius(temp);
+
+    cout << "The Temperature is " << celsius << " degree Celsius";
+    return 0;
+}
+
+Q10. Implement a C++ function that takes a student's attendance percentage as an argument and returns whether they are eligible for exams
+     using if-else statements.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+bool checkEligibility(float p)
+{
+    if (p > 75.00)
+    {
+        return true;
+    }
+    return false;
+}
+
+int main()
+{
+    float attendence_Percentage;
+    cout << "Enter the Percentage of Student: ";
+    cin >> attendence_Percentage;
+
+    bool isEligibleForExam = checkEligibility(attendence_Percentage);
+
+    if (isEligibleForExam)
+    {
+        cout << "Congrates!, You are Eligible for Examibation";
+    }
+    else
+    {
+        cout << "Sorry, You are not eligible for examination";
+    }
+    return 0;
+}

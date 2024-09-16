@@ -1,0 +1,154 @@
+Q. 15 integer data from user and print them
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int num;
+    cout << "Please Enter Any Number: ";
+    cin >> num;
+    cout << "Your Entred " << num;
+}
+
+Q. print Hello myself _______ I am from _____ I have completed btech from ______.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string name, city, degree;
+    cout << "Enter Your name: ";
+    cin >> name;
+    cout << "Enter Your City: ";
+    cin >> city;
+    cout << "Enter Your Degree: ";
+    cin >> degree;
+    cout << "Hello myself " << name << " I am from " << city << " I have completed btech from " << degree << "." << endl;
+}
+
+Q. sum of a and b using user input 
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+     //sum of a and b using user input 
+     int a, b, sumOfNumber;
+     cout << "Enter The Value of a varible : ";
+     cin >> a;
+     cout << "Enter The Value of b varible : ";
+     cin >> b;
+     sumOfNumber += a+b;
+     cout << "The sum of a and b is " << sumOfNumber << endl;
+}
+
+Q. sub of a and b karna hai if sub is negative then use math to make it positive
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+     //sub of a and b karna hai if sub is negative then use math to make it positive
+     int a,b,subtractionOfNumber;
+     cout << "Enter the First Value: ";
+     cin >> a;
+     cout << "Enter the Second Value: ";
+     cin >> b;
+     subtractionOfNumber = a-b;
+     if(subtractionOfNumber > 0){
+         cout << "The result after Subtraction of a and b is " << subtractionOfNumber << endl;
+     } else {
+         subtractionOfNumber = abs(subtractionOfNumber);
+         cout << "The Positive result of your substarction is " << subtractionOfNumber << endl;
+     }
+}
+
+Q. calcualte the average of 5 numbers.
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+     //calcualte the average of 5 numbers.
+     int a,b,c,d,e;
+     float avgNum;
+     cout << "Enter the 1st Value : ";
+     cin >> a;
+     cout << "Enter the 2nd Value : ";
+     cin >> b;
+     cout << "Enter the 3rd Value : ";
+     cin >> c;
+     cout << "Enter the 4th Value : ";
+     cin >> d;
+     cout << "Enter the 5th Value : ";
+     cin >> e;
+     avgNum = (a+b+c+d+e)/5.0;
+     cout << "The Avg of entred number is :" << avgNum << endl;
+}
+
+Q.  swap the values of a and b
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+     //swap the values of a and b
+     //method 1
+     int a,b,c;
+     cout << "Enter Any Nymber :";
+     cin >> a;
+     cout << "Enter Any Number: ";
+     cin >> b;
+     
+    //cout << "The value of a and b before swap was : " << a << " and " << b << endl;
+     
+    //  c = a;
+    //  a = b;
+    //  b = c;
+     
+    cout << "The value of a and b before swap was : " << a << " and " << b << endl;
+     
+     //method 2
+     a = a+b;
+     b = a-b;
+     a = a-b;
+     
+     cout << "The value of a and b After swap was : " << a << " and " << b << endl;
+}
+
+Q.  take an input from user and check whether it is postive negative or 0
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+     //take an input from user and check whether it is postive negative or 0
+     int num;
+     cout << "Enter Any Value : ";
+     cin >> num;
+     if (num > 0){
+         cout << "Entered Number is Positive." << endl;
+     } else if (num < 0){
+         cout << "Entered Number is Negative." << endl;
+     } else {
+          cout << "Entered Value is equal to 0" << endl;
+     }
+}
+
+Q. take input from user and check whether it is even or odd
+
+Ans. #include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+     //take input from user and check whether it is even or odd
+     int num;
+     cout << "Enter Any Value : ";
+     cin >> num;
+     bool isEven = (num%2 == 0);
+     if (isEven){
+         cout << "Entered Number is Even Number";
+     } else {
+        cout << "Entered Number is Odd Number";
+     }
+}
