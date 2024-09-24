@@ -24,7 +24,7 @@ int main()
 {
     // a, b, c, d, e, f, h, i, jWhat is the missing number in the sequence?
 
-    vector<char> sequence_char = {'a', 'b', 'c', 'd', 'e', 'f', 'h', 'i'};
+    vector<char> sequence_char = {'a', 'b', 'c', 'd', 'e', 'g', 'h'};
 
     int missed_Ascci_val = getMissedAscciVal(sequence_char);
     if (missed_Ascci_val != -1)
