@@ -5,7 +5,7 @@ int main()
 {
     vector<int> arr{15, 12, 48, 56, 2, 6};
     int n = arr.size();
-    int searched_el = 16;
+    int searched_el = 12;
     bool ans = false;
 
     for (int i = 0; i < n; i++)
