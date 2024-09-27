@@ -3,8 +3,9 @@ using namespace std;
 
 int main()
 {
-    vector<int> arr{1, 2, 3, 5, 6};
+    vector<int> arr{1, 2, 4, 16, 32, 64};
     int count = arr[0];
+    int r = arr[1] / arr[0];
 
     for (int i = 0; i < arr.size(); i++)
     {
@@ -12,7 +13,7 @@ int main()
         {
             break;
         }
-        count++;
+        count = count * r;
     }
 
     cout << "Missing Element in Array is " << count;
