@@ -1,17 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int getMissingVal(vector<int> arr)
+int getMissingVal(vector<int> &arr)
 {
-    int count = arr[0];
-    for (int i = 0; i < arr.size(); i++)
+    sort(arr.begin(), arr.end());
+
+    int first_positive_num = arr[0];
+
+    for (auto val : arr)
     {
-        if (count != arr[i])
+        if (val < 0)
+        {
+            continue;
+            ;
+        }
+        else
+        {
+            first_positive_num = val;
+            break;
+        }
+    }
+
+    int count = first_positive_num;
+
+    for (auto it : arr)
+    {
+        if (it > 0 && count != it)
         {
             break;
         }
         count++;
     }
+
     return count;
 }
 
@@ -21,7 +41,7 @@ int main()
         Find the First Positive Missing Integer
         Given an unsorted array of integers, find the smallest positive integer that is missing from the array.
     */
-    vector<int> arr{1, 2, 4, 5};
+    vector<int> arr{3, 4, -1, 1};
     int missing_num = getMissingVal(arr);
 
     cout << "Missing value is " << missing_num;
