@@ -1,0 +1,89 @@
+Q1.   #
+     ##
+    ###
+   ####
+
+Ans. void staircase(int n) {
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if (j < n-i-1){
+                cout << " ";
+            } else {
+                cout << "#";
+            }
+        }
+        cout << "\n";
+    }
+}
+
+Q2. birthdayCakeCandles : - You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able 
+    to blow out the tallest of the candles. Count how many candles are tallest.
+
+Ans. int birthdayCakeCandles(vector<int> candles) {
+    int max_value = *std::max_element(candles.begin(), candles.end());
+    int count = 0;
+    for(auto it:candles){
+        if (it == max_value){
+            count++;
+        }
+    }
+    return count;
+}
+
+Q3. Subarray Division  :- Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.Lily decides to share a contiguous segment of the bar selected
+   such that:
+   The length of the segment matches Ron's birth month, and,
+   The sum of the integers on the squares is equal to his birth day.
+   Determine how many ways she can divide the chocolate.
+
+Ans. int birthday(vector<int> s, int d, int m) {
+    int count = 0;
+    
+    for(int i = 0; i <= s.size()-m; i++){
+        int sum = 0;
+        for(int j = 0; j < m; j++){
+            sum += s[i+j];
+        }
+        if (sum == d){
+            count++;
+        }
+    }
+    return count;
+}
+
+Q4. Drawing book :- A teacher asks the class to open their books to a page number. A student can either start turning pages from the front of the book or from the back of the book. They 
+    always turn pages one at a time. When they open the book, page  is always on the right side: When they flip page , they see pages  and . Each page except the last page will always be 
+    printed on both sides. The last page may only be printed on the front, given the length of the book. If the book is  pages long, and a student wants to turn to page , what is the 
+    minimum number of pages to turn? They can start at the beginning or the end of the book.
+    Given  n and p, find and print the minimum number of pages that must be turned in order to arrive at page .
+
+Ans. int pageCount(int n, int p) {
+     int front_turns = p / 2;
+     
+    int back_turns = (n / 2) - (p / 2);
+
+    return min(front_turns, back_turns);
+}
+
+Q5.  Migrating bird :- Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been 
+     spotted that maximum amount, return the smallest of their ids.
+
+Ans. int migratoryBirds(vector<int> arr) {
+    vector<int> freq(6, 0);
+    
+    for (int bird : arr) {
+        freq[bird]++;
+    }
+
+    int max_count = 0;
+    int result = 0;
+    for (int i = 1; i <= 5; i++) { 
+        if (freq[i] > max_count) {
+            max_count = freq[i];
+            result = i;
+        }
+    }
+    
+    return result;
+}
+
