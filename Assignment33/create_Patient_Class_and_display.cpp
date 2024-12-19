@@ -61,5 +61,7 @@ int main()
         patients[i].displayDetails();
     }
 
+    delete[] patients;
+
     return 0;
 }
