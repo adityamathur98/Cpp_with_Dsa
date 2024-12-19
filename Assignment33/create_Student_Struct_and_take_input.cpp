@@ -47,5 +47,7 @@ int main()
     {
         movie[i].displayDetails();
     }
+
+    delete[] movie;
     return 0;
 }
