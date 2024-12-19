@@ -52,5 +52,7 @@ int main()
         teacherArr[i].displayDetails();
     }
 
+    delete[] teacherArr;
+
     return 0;
 }
